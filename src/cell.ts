@@ -7,6 +7,10 @@ export class Cell {
         private cellState: CellState
     ) {}
 
+    isAlive(): boolean {
+        return this.cellState.isAlive;
+    }
+
     nextGeneration(number: number): Cell {
         return new Cell(this.position, this.cellState.nextState(number));
     }

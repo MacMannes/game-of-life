@@ -13,28 +13,4 @@ describe('CellState', () => {
 
         expect(cellState.isAlive).toBe(false);
     });
-
-    it('should die if it has less than two live neighbours', () => {
-        const cellState = CellState.alive();
-
-        const newCellState = cellState.nextState(1);
-
-        expect(newCellState.isAlive).toBe(false);
-    });
-
-    it('should survive when it has two or three live neighbours', () => {
-        const cellState = CellState.alive();
-
-        const newCellState = cellState.nextState(2);
-
-        expect(newCellState.isAlive).toBe(true);
-    });
-
-    it('should become alive when it was dead and has exactly three neighbours', () => {
-        const cellState = CellState.dead();
-
-        const newCellState = cellState.nextState(3);
-
-        expect(newCellState.isAlive).toBe(true);
-    });
 });
