@@ -6,7 +6,9 @@ export class CellState {
         this.isAlive = isAlive;
     }
 
-    nextState(number: number) {
+    nextState(neighbours: number): CellState {
+        if (this.isAlive && (neighbours === 2 || neighbours === 3)) return CellState.alive()
+
         return CellState.dead();
     }
 

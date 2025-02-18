@@ -20,6 +20,13 @@ describe('CellState', () => {
         const newCellState = cellState.nextState(1);
 
         expect(newCellState.isAlive).toBe(false);
+    });
 
+    it('should survive when it has two or three live neighbours', () => {
+        const cellState = CellState.alive();
+
+        const newCellState = cellState.nextState(2);
+
+        expect(newCellState.isAlive).toBe(true);
     });
 });
