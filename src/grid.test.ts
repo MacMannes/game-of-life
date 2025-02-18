@@ -1,6 +1,5 @@
 import { describe, expect, it } from 'vitest';
 import { Cell } from './cell';
-import { Position } from './position';
 import { Grid } from './grid';
 import { Bounds } from './bounds';
 
