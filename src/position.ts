@@ -1,7 +1,7 @@
 export class Position {
     constructor(
-        private readonly row: number,
-        private readonly column: number,
+        public readonly row: number,
+        public readonly column: number,
     ) {}
 
     neighbours(): Position[] {
