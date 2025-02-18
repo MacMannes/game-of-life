@@ -11,6 +11,10 @@ export class Cell {
         return this.cellState.isAlive;
     }
 
+    public getPosition(): Position {
+        return this.position;
+    }
+
     nextGeneration(numberOfNeighbours: number): Cell {
         return new Cell(this.position, this.cellState.nextState(numberOfNeighbours));
     }
