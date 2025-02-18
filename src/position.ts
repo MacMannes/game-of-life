@@ -18,4 +18,8 @@ export class Position {
             new Position(this.row + 1, this.column + 1),
         ];
     }
+
+    equals(position: Position): boolean {
+        return this.row === position.row && this.column === position.column;
+    }
 }
