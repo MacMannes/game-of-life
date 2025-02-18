@@ -1,6 +1,5 @@
 import { Cell } from './cell';
 import { Position } from './position';
-import { CellState } from './cell-state';
 import { Bounds } from './bounds';
 
 type GridOptions = { cells: Cell[]; bounds: Bounds };
@@ -15,22 +14,21 @@ export class Grid {
     }
 
     nextGeneration(): Grid {
-        const newCells: Cell[] = [];
-
-        for (const position of this.bounds.positions()) {
-            const cell = this.getCell(position);
-            const aliveNeighbours = this.getAliveNeighbours(position);
-
-            const newCell = cell.nextGeneration(aliveNeighbours.length);
-            if (newCell.isAlive()) {
-                newCells.push(newCell);
-            }
-        }
+        const cells = Array.from(this.bounds.positions())
+            .map((position) => this.nextGenerationOfPosition(position))
+            .filter((it) => it.isAlive());
 
         return new Grid({
-            cells: newCells,
+            cells,
             bounds: this.bounds,
         });
+    }
+
+    private nextGenerationOfPosition(position: Position) {
+        const cell = this.getCell(position);
+        const aliveNeighbours = this.getAliveNeighbours(position);
+
+        return cell.nextGeneration(aliveNeighbours.length);
     }
 
     private getCell(position: Position): Cell {
