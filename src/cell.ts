@@ -22,4 +22,12 @@ export class Cell {
     equals(cell: Cell): boolean {
         return this.position.equals(cell.position);
     }
+
+    static aliveCellAt(row: number, column: number): Cell {
+        return new Cell(new Position(row, column), CellState.alive());
+    }
+
+    static deadCellAt(row: number, column: number): Cell {
+        return new Cell(new Position(row, column), CellState.dead());
+    }
 }
