@@ -13,4 +13,13 @@ describe('CellState', () => {
 
         expect(cellState.isAlive).toBe(false);
     });
+
+    it('should die if it has less than two live neighbours', () => {
+        const cellState = CellState.alive();
+
+        const newCellState = cellState.nextState(1);
+
+        expect(newCellState.isAlive).toBe(false);
+
+    });
 });

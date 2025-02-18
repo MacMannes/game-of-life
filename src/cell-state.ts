@@ -6,6 +6,9 @@ export class CellState {
         this.isAlive = isAlive;
     }
 
+    nextState(number: number) {
+        return CellState.dead();
+    }
 
     static alive() {
         return new CellState(true);
