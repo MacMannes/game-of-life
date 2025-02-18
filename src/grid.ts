@@ -15,6 +15,10 @@ export class Grid {
     }
 
     nextGeneration(): Grid {
+        for (const position of this.bounds.positions()) {
+            console.log(position);
+        }
+
         return new Grid({
             cells: [
                 new Cell(new Position(0, 0), CellState.alive()),
