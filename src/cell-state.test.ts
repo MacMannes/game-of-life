@@ -29,4 +29,12 @@ describe('CellState', () => {
 
         expect(newCellState.isAlive).toBe(true);
     });
+
+    it('should become alive when it was dead and has exactly three neighbours', () => {
+        const cellState = CellState.dead();
+
+        const newCellState = cellState.nextState(3);
+
+        expect(newCellState.isAlive).toBe(true);
+    });
 });
