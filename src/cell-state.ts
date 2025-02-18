@@ -7,12 +7,10 @@ export class CellState {
     }
 
     nextState(neighbours: number): CellState {
-        if (this.isAlive && neighbours < 2) return CellState.dead()
-        if (this.isAlive && (neighbours === 2 || neighbours === 3)) return CellState.alive()
-        if (this.isAlive && neighbours > 3) return CellState.dead()
+        if (this.isAlive && (neighbours < 2 || neighbours > 3)) return CellState.dead()
         if (!this.isAlive && neighbours === 3) return CellState.alive()
 
-        return CellState.dead();
+        return this;
     }
 
     static alive() {
