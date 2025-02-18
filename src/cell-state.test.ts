@@ -9,8 +9,8 @@ describe('CellState', () => {
     });
 
     it('should create a dead cell', () => {
-        const cellState = CellState.alive();
+        const cellState = CellState.dead();
 
-        expect(cellState.isAlive).toBe(true);
+        expect(cellState.isAlive).toBe(false);
     });
 });
