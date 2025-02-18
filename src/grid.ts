@@ -3,13 +3,15 @@ import { Position } from './position';
 import { CellState } from './cell-state';
 import { Bounds } from './bounds';
 
+type GridOptions = { cells: Cell[]; bounds: Bounds };
+
 export class Grid {
     private readonly cells: Map<Position, Cell>;
     private readonly bounds: Bounds;
 
-    constructor({ cells, bounds }: { cells: Cell[]; bounds: Bounds }) {
-        this.cells = new Map(cells.map((it) => [it.getPosition(), it]));
-        this.bounds = bounds;
+    constructor(options: GridOptions) {
+        this.cells = new Map(options.cells.map((it) => [it.getPosition(), it]));
+        this.bounds = options.bounds;
     }
 
     nextGeneration(): Grid {
