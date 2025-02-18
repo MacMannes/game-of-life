@@ -11,7 +11,7 @@ export class Cell {
         return this.cellState.isAlive;
     }
 
-    public getPosition(): Position {
+    getPosition(): Position {
         return this.position;
     }
 
