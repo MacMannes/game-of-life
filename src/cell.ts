@@ -4,15 +4,15 @@ import { CellState } from './cell-state';
 export class Cell {
     constructor(
         private readonly position: Position,
-        private cellState: CellState
+        private cellState: CellState,
     ) {}
 
     isAlive(): boolean {
         return this.cellState.isAlive;
     }
 
-    nextGeneration(number: number): Cell {
-        return new Cell(this.position, this.cellState.nextState(number));
+    nextGeneration(numberOfNeighbours: number): Cell {
+        return new Cell(this.position, this.cellState.nextState(numberOfNeighbours));
     }
 
     equals(cell: Cell): boolean {
