@@ -18,11 +18,8 @@ export class Grid {
         const newCells: Cell[] = [];
 
         for (const position of this.bounds.positions()) {
-            const cell = this.cells.get(position.toString()) ?? Cell.deadCellAt(position.row, position.column);
-            const aliveNeighbours = position
-                .neighbours()
-                .map((position) => this.cells.get(position.toString()))
-                .filter((it) => it !== undefined);
+            const cell = this.getCell(position);
+            const aliveNeighbours = this.getAliveNeighbours(position);
 
             const newCell = cell.nextGeneration(aliveNeighbours.length);
             if (newCell.isAlive()) {
@@ -34,5 +31,16 @@ export class Grid {
             cells: newCells,
             bounds: this.bounds,
         });
+    }
+
+    private getCell(position: Position): Cell {
+        return this.cells.get(position.toString()) ?? Cell.deadCellAt(position.row, position.column);
+    }
+
+    private getAliveNeighbours(position: Position): Cell[] {
+        return position
+            .neighbours()
+            .map((position) => this.getCell(position))
+            .filter((it) => it.isAlive());
     }
 }
