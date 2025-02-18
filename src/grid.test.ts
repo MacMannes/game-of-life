@@ -5,7 +5,7 @@ import { Bounds } from './bounds';
 
 describe('Grid', () => {
     it('should evolve correctly with a 2x2 grid using the Game of Life rule', () => {
-        const bounds = Bounds.withMax(2, 2);
+        const bounds = Bounds.withMax(1, 1);
         const grid = new Grid({
             cells: [Cell.aliveCellAt(0, 0), Cell.aliveCellAt(0, 1), Cell.aliveCellAt(1, 0), Cell.deadCellAt(1, 1)],
             bounds,
@@ -27,14 +27,17 @@ describe('Grid', () => {
         // .X..
         // ..X.
 
-        const bounds = Bounds.withMax(4, 4);
+        const bounds = Bounds.withMax(3, 3);
         const grid = new Grid({
             cells: [
                 Cell.aliveCellAt(0, 1),
                 Cell.aliveCellAt(0, 2),
+
                 Cell.aliveCellAt(1, 0),
                 Cell.aliveCellAt(1, 3),
+
                 Cell.aliveCellAt(2, 1),
+
                 Cell.aliveCellAt(3, 2),
             ],
             bounds,
@@ -42,25 +45,21 @@ describe('Grid', () => {
 
         const nextGeneration = grid.nextGeneration();
 
-        // .X..
-        // XX..
         // .XX.
-        // ..X.
+        // X...
+        // .XX.
+        // ....
+
         expect(nextGeneration).toStrictEqual(
             new Grid({
                 cells: [
-                    Cell.aliveCellAt(0, 0),
                     Cell.aliveCellAt(0, 1),
                     Cell.aliveCellAt(0, 2),
-                    Cell.aliveCellAt(0, 3),
 
                     Cell.aliveCellAt(1, 0),
-                    Cell.aliveCellAt(1, 1),
 
                     Cell.aliveCellAt(2, 1),
                     Cell.aliveCellAt(2, 2),
-
-                    Cell.aliveCellAt(3, 2),
                 ],
                 bounds,
             }),
