@@ -7,8 +7,8 @@ export class Bounds {
     ) {}
 
     *positions(): Generator<Position> {
-        for (let row = this.min.row; row <= this.max.row; row++) {
-            for (let col = this.min.column; col <= this.max.column; col++) {
+        for (let row = this.min.row; row < this.max.row; row++) {
+            for (let col = this.min.column; col < this.max.column; col++) {
                 yield new Position(row, col);
             }
         }
