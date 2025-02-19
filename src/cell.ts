@@ -23,6 +23,10 @@ export class Cell {
         return this.position.equals(cell.position);
     }
 
+    toString(): string {
+        return this.isAlive() ? '█' : ' ';
+    }
+
     static aliveCellAt(row: number, column: number): Cell {
         return new Cell(new Position(row, column), CellState.alive());
     }

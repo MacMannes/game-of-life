@@ -28,6 +28,19 @@ export class Grid {
         });
     }
 
+    toString(): string {
+        let representation = '';
+
+        for (const position of this.bounds.positions()) {
+            const cell = this.getCell(position);
+
+            representation += cell.toString();
+            if (position.column === this.bounds.getMaxColumn()) representation += '\n';
+        }
+
+        return representation;
+    }
+
     private computeNextCellState(position: Position) {
         const cell = this.getCell(position);
         const aliveNeighbours = this.getAliveNeighbours(position);
