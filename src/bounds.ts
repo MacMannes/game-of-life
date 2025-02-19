@@ -23,7 +23,7 @@ export class Bounds {
         }
     }
 
-    static withMax(row: number, column: number): Bounds {
-        return new Bounds(new Position(0, 0), new Position(row, column));
+    static withSize({width, height}:{width: number, height: number}): Bounds {
+        return new Bounds(new Position(0, 0), new Position(width - 1, height - 1));
     }
 }
