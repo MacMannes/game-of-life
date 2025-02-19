@@ -1,0 +1,38 @@
+on:
+  - push
+  - pull_request
+
+jobs:
+  cache-and-install:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: 10
+          run_install: false
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run Unit Tests
+        run: pnpm test:coverage
+
+      - name: 'Publish results badge'
+        uses: wjervis7/vitest-badge-action@v1.0.0
+        with:
+          result-type: lines
+          gist-token: ${{ secrets.RELEASE_PLEASE_TOKEN }} # if you want to upload badge to gist
+          gist-url: https://gist.github.com/MacMannes/38c6def539f3ec3e9f1b33abe283d8f2
+          upload-badge: ${{ github.ref == 'refs/heads/main' }}
+          badge-text: 'coverage'

@@ -5,7 +5,7 @@ export default defineConfig({
     plugins: [tsconfigPaths()],
     test: {
         coverage: {
-            reporter: ['text', 'lcov', 'html'],
+            reporter: ['json-summary', 'text', 'lcov', 'html'],
             exclude: [...coverageConfigDefaults.exclude, 'src/utils/test/***'],
             include: ['src/**'],
         },
