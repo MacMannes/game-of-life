@@ -1,5 +1,7 @@
 # Game Of Life
     
+![Coverage](badge.svg)
+
 ## Description
 
 The universe of the Game of Life is an infinite two-dimensional grid. Any cell of the grid is in one of two possible states: dead or alive. Every cell interacts with its eight neighbours, which are the cells that are horizontally, vertically, or diagonally adjacent.

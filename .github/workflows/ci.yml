@@ -30,10 +30,11 @@ jobs:
 
       - name: Publish Results Badge
         uses: wjervis7/vitest-badge-action@v1.0.0
-        if: success() || failure() # run whether steps succeed or not
+        if: success() || failure()
         with:
           result-type: statements
           upload-badge: false
+          badge-text: 'coverage'
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
