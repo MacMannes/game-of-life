@@ -6,15 +6,6 @@ export class Bounds {
         private readonly max: Position,
     ) {}
 
-    includes(position: Position): boolean {
-        return (
-            position.row >= this.min.row &&
-            position.column >= this.min.column &&
-            position.column <= this.max.row &&
-            position.column <= this.max.column
-        );
-    }
-
     *positions(): Generator<Position> {
         for (let row = this.min.row; row <= this.max.row; row++) {
             for (let col = this.min.column; col <= this.max.column; col++) {
