@@ -3,7 +3,7 @@ on:
   - pull_request
 
 jobs:
-  cache-and-install:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -28,11 +28,14 @@ jobs:
       - name: Run Unit Tests
         run: pnpm test:coverage
 
-      - name: 'Publish results badge'
+      - name: Publish Results Badge
         uses: wjervis7/vitest-badge-action@v1.0.0
+        if: success() || failure() # run whether steps succeed or not
         with:
-          result-type: lines
-          gist-token: ${{ secrets.RELEASE_PLEASE_TOKEN }} # if you want to upload badge to gist
-          gist-url: https://gist.github.com/MacMannes/38c6def539f3ec3e9f1b33abe283d8f2
-          upload-badge: ${{ github.ref == 'refs/heads/main' }}
-          badge-text: 'coverage'
+          result-type: statements
+          upload-badge: false
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          file_pattern: './badge.svg'
