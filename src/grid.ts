@@ -14,9 +14,13 @@ export class Grid {
     }
 
     nextGeneration(): Grid {
-        const cells = Array.from(this.bounds.positions())
-            .map((position) => this.nextGenerationOfPosition(position))
-            .filter((it) => it.isAlive());
+        const cells: Cell[] = [];
+
+        for (const position of this.bounds.positions()) {
+            const cell = this.computeNextCellState(position);
+
+            if (cell.isAlive()) cells.push(cell);
+        }
 
         return new Grid({
             cells,
@@ -24,7 +28,7 @@ export class Grid {
         });
     }
 
-    private nextGenerationOfPosition(position: Position) {
+    private computeNextCellState(position: Position) {
         const cell = this.getCell(position);
         const aliveNeighbours = this.getAliveNeighbours(position);
 
