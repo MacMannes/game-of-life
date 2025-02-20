@@ -20,10 +20,10 @@ describe('Game Of Life', () => {
         new GameOfLife(createInitialGrid(4, 4), ui);
 
         const expected = stripFirstLine(`
- ██ 
-█  █
- █  
-  █ 
+ ■■ 
+■  ■
+ ■  
+  ■ 
 `);
         expect(ui.displayWorld).toBeCalledWith(expected);
     });
@@ -34,9 +34,9 @@ describe('Game Of Life', () => {
         gameOfLife.tick();
 
         const expected = stripFirstLine(`
- ██ 
-█   
- ██ 
+ ■■ 
+■   
+ ■■ 
     
 `);
         expect(ui.displayWorld).toBeCalledWith(expected);

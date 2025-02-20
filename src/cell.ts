@@ -24,7 +24,7 @@ export class Cell {
     }
 
     toString(): string {
-        return this.isAlive() ? '█' : ' ';
+        return this.isAlive() ? '■' : ' ';
     }
 
     static aliveCellAt(row: number, column: number): Cell {
