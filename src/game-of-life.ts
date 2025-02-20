@@ -18,6 +18,7 @@ export class GameOfLife {
 
     tick() {
         this.grid = this.grid.nextGeneration();
+        this.ui.resetDisplay();
         this.displayGrid();
     }
 }

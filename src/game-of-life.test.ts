@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { GameOfLife } from './game-of-life';
 import { Bounds } from './bounds';
 import { Grid } from './grid';
@@ -11,6 +11,9 @@ describe('Game Of Life', () => {
         resetDisplay: vi.fn(),
     };
 
+    afterEach(() => {
+        vi.resetAllMocks();
+    })
 
     it('should print the initial grid on creation', (seed: Grid) => {
         new GameOfLife(createInitialGrid(4, 4), ui);
@@ -36,6 +39,13 @@ describe('Game Of Life', () => {
     
 `);
         expect(ui.displayWorld).toBeCalledWith(expected);
+    });
+
+    it('should reset the display before displaying the new generation in a tick', () => {
+        const gameOfLife = new GameOfLife(createInitialGrid(4, 4), ui);
+
+        gameOfLife.tick();
+        expect(ui.resetDisplay).toHaveBeenCalledOnce();
     });
 
     function createInitialGrid(width: number, height: number): Grid {
