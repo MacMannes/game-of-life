@@ -12,8 +12,8 @@ describe('Game Of Life', () => {
     };
 
 
-    it('should print the initial grid as expected', () => {
-        new GameOfLife(createInitialGrid(4, 4));
+    it('should print the initial grid on creation', (seed: Grid) => {
+        new GameOfLife(createInitialGrid(4, 4), ui);
 
         const expected = stripFirstLine(`
  ██ 
@@ -24,8 +24,8 @@ describe('Game Of Life', () => {
         expect(ui.displayWorld).toBeCalledWith(expected);
     });
 
-    it('should evolve the grid state and display it after a tick ', () => {
-        const gameOfLife = new GameOfLife(createInitialGrid(4, 4));
+    it('should display the evolved grid after a tick ', () => {
+        const gameOfLife = new GameOfLife(createInitialGrid(4, 4), ui);
 
         gameOfLife.tick();
 
