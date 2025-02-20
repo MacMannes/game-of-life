@@ -15,7 +15,7 @@ export class Bounds {
     }
 
     static withSize({width, height}:{width: number, height: number}): Bounds {
-        return new Bounds(new Position(0, 0), new Position(width - 1, height - 1));
+        return new Bounds(new Position(0, 0), new Position(height - 1, width - 1));
     }
 
     getMaxColumn() {
