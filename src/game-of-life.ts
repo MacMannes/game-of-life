@@ -7,6 +7,10 @@ export class GameOfLife {
         this.grid = seed;
     }
 
+    tick() {
+        this.grid = this.grid.nextGeneration();
+    }
+
     toString(): string {
         return this.grid.toString();
     }

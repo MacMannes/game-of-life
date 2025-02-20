@@ -1,23 +1,41 @@
-import { beforeEach, describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { GameOfLife } from './game-of-life';
 import { Bounds } from './bounds';
 import { Grid } from './grid';
 import { Cell } from './cell';
+import { UserInterface } from './UserInterface';
 
 describe('Game Of Life', () => {
+    const ui: UserInterface = {
+        displayWorld: vi.fn(),
+        resetDisplay: vi.fn(),
+    };
+
+
     it('should print the initial grid as expected', () => {
-        const gameOfLife = new GameOfLife(createInitialGrid(4, 4));
+        new GameOfLife(createInitialGrid(4, 4));
 
-        const representation = gameOfLife.toString();
-
-        const expected = `
+        const expected = stripFirstLine(`
  ██ 
 █  █
  █  
   █ 
-`;
+`);
+        expect(ui.displayWorld).toBeCalledWith(expected);
+    });
 
-        expect('\n'+ representation).toBe(expected);
+    it('should evolve the grid state and display it after a tick ', () => {
+        const gameOfLife = new GameOfLife(createInitialGrid(4, 4));
+
+        gameOfLife.tick();
+
+        const expected = stripFirstLine(`
+ ██ 
+█   
+ ██ 
+    
+`);
+        expect(ui.displayWorld).toBeCalledWith(expected);
     });
 
     function createInitialGrid(width: number, height: number): Grid {
@@ -36,5 +54,9 @@ describe('Game Of Life', () => {
             ],
             bounds,
         });
+    }
+
+    function stripFirstLine(str: string): string {
+        return str.split('\n').slice(1).join('\n');
     }
 });
