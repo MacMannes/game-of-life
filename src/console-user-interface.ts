@@ -7,6 +7,10 @@ export class ConsoleUserInterface implements UserInterface {
         console.log(world)
     }
 
+    displayGeneration(generation: number): void {
+        console.log(`\nGeneration: ${generation}. Press Ctrl+C to stop the simulation`);
+    }
+
     resetDisplay(): void {
         console.clear()
     }

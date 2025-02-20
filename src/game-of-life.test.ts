@@ -9,6 +9,7 @@ describe('Game Of Life', () => {
     const ui: UserInterface = {
         displayWorld: vi.fn(),
         resetDisplay: vi.fn(),
+        displayGeneration: vi.fn(),
     };
 
     afterEach(() => {

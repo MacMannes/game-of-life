@@ -47,16 +47,13 @@ ui.resetDisplay();
 
 const game = new GameOfLife(createInitialGrid(80, 40), ui);
 let generation = 1;
-displayGeneration();
+ui.displayGeneration(generation);
 
-function displayGeneration() {
-    console.log(`\nGeneration: ${generation}. Press Ctrl+C to stop the simulation`);
-}
 
 setInterval(() => {
     game.tick();
     generation++;
-    displayGeneration();
+    ui.displayGeneration(generation);
 }, 500);
 
 /* v8 ignore end */
