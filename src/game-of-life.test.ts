@@ -3,7 +3,7 @@ import { GameOfLife } from './game-of-life';
 import { Bounds } from './bounds';
 import { Grid } from './grid';
 import { Cell } from './cell';
-import { UserInterface } from './UserInterface';
+import { UserInterface } from './user-interface';
 
 describe('Game Of Life', () => {
     const ui: UserInterface = {

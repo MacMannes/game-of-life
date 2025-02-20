@@ -1,5 +1,5 @@
 import { Grid } from './grid';
-import { UserInterface } from './UserInterface';
+import { UserInterface } from './user-interface';
 
 export class GameOfLife {
     private grid: Grid;
