@@ -17,7 +17,7 @@ The initial pattern constitutes the **seed** of the system. The first generation
 
 The rules continue to be applied repeatedly to create further generations.
 
-## My approach of solving the problem
+## My approach to solving the problem
 
 My brain tends to focus on small details first, and when I try to start from the outside in, I get overwhelmed with all the small details I still have to implement. So I wanted to start with the smallest entity of the Game: the `Cell`. But then I realised the `Cell` has to have the state **dead** or **alive** and the third Object Calisthenics rule dictates you have to encapsulate primitives, so I started with an even smaller entity: the `CellState`. 
 
