@@ -12,6 +12,7 @@
     "test:ci": "vitest run src/ --silent --coverage",
     "test:report": "vitest run --outputFile test-results/junit.xml --reporter default --reporter junit",
     "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix",
     "start": "tsx src/app.ts"
   },
   "dependencies": {

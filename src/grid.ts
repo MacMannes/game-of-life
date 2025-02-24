@@ -2,10 +2,10 @@ import { Cell } from './cell';
 import { Position } from './position';
 import { Bounds } from './bounds';
 
-type GridOptions = {
+interface GridOptions {
     cells: Cell[];
     bounds: Bounds;
-};
+}
 
 export class Grid {
     private readonly cells: Map<string, Cell>;

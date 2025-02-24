@@ -1,4 +1,4 @@
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import { GameOfLife } from './game-of-life';
 import { Bounds } from './bounds';
 import { Grid } from './grid';
@@ -14,9 +14,9 @@ describe('Game Of Life', () => {
 
     afterEach(() => {
         vi.resetAllMocks();
-    })
+    });
 
-    it('should print the initial grid on creation', (seed: Grid) => {
+    it('should print the initial grid on creation', () => {
         new GameOfLife(createInitialGrid(4, 4), ui);
 
         const expected = stripFirstLine(`

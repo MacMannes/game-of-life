@@ -34,6 +34,5 @@ describe('Cell', () => {
         const nextGeneration = cell.nextGeneration(3);
 
         expect(nextGeneration.isAlive()).toBe(true);
-
     });
 });

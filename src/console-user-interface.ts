@@ -4,7 +4,7 @@ import { UserInterface } from './user-interface';
 
 export class ConsoleUserInterface implements UserInterface {
     displayWorld(world: string): void {
-        console.log(world)
+        console.log(world);
     }
 
     displayGeneration(generation: number): void {
@@ -12,7 +12,7 @@ export class ConsoleUserInterface implements UserInterface {
     }
 
     resetDisplay(): void {
-        console.clear()
+        console.clear();
     }
 }
 

@@ -14,7 +14,7 @@ export class Bounds {
         }
     }
 
-    static withSize({width, height}:{width: number, height: number}): Bounds {
+    static withSize({ width, height }: { width: number; height: number }): Bounds {
         return new Bounds(new Position(0, 0), new Position(height - 1, width - 1));
     }
 

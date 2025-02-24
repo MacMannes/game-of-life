@@ -14,7 +14,6 @@ export default tseslint.config(
         rules: {
             'quote-props': ['error', 'consistent-as-needed'],
             '@typescript-eslint/no-explicit-any': 'off',
-            '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
             'prettier/prettier': 'error',
         },
     },
