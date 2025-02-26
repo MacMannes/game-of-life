@@ -12,7 +12,9 @@ export class Grid {
     private readonly bounds: Bounds;
 
     constructor(options: GridOptions) {
-        this.cells = new Map(options.cells.map((it) => [it.getPosition().toString(), it]));
+        this.cells = new Map(
+            options.cells.map((it) => [it.getPosition().toString(), it]),
+        );
         this.bounds = options.bounds;
     }
 
@@ -38,7 +40,8 @@ export class Grid {
             const cell = this.getCell(position);
 
             representation += cell.toString();
-            if (position.column === this.bounds.getMaxColumn()) representation += '\n';
+            if (position.column === this.bounds.getMaxColumn())
+                representation += '\n';
         }
 
         return representation;
@@ -52,7 +55,10 @@ export class Grid {
     }
 
     private getCell(position: Position): Cell {
-        return this.cells.get(position.toString()) ?? Cell.deadCellAt(position.row, position.column);
+        return (
+            this.cells.get(position.toString()) ??
+            Cell.deadCellAt(position.row, position.column)
+        );
     }
 
     private getAliveNeighbours(position: Position): Cell[] {

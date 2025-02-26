@@ -7,7 +7,12 @@ describe('Grid', () => {
     it('should evolve correctly with a 2x2 grid using the Game of Life rule', () => {
         const bounds = Bounds.withSize({ width: 2, height: 2 });
         const grid = new Grid({
-            cells: [Cell.aliveCellAt(0, 0), Cell.aliveCellAt(0, 1), Cell.aliveCellAt(1, 0), Cell.deadCellAt(1, 1)],
+            cells: [
+                Cell.aliveCellAt(0, 0),
+                Cell.aliveCellAt(0, 1),
+                Cell.aliveCellAt(1, 0),
+                Cell.deadCellAt(1, 1),
+            ],
             bounds,
         });
 
@@ -15,7 +20,12 @@ describe('Grid', () => {
 
         expect(nextGeneration).toStrictEqual(
             new Grid({
-                cells: [Cell.aliveCellAt(0, 0), Cell.aliveCellAt(0, 1), Cell.aliveCellAt(1, 0), Cell.aliveCellAt(1, 1)],
+                cells: [
+                    Cell.aliveCellAt(0, 0),
+                    Cell.aliveCellAt(0, 1),
+                    Cell.aliveCellAt(1, 0),
+                    Cell.aliveCellAt(1, 1),
+                ],
                 bounds,
             }),
         );

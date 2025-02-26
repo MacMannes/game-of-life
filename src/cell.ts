@@ -16,7 +16,10 @@ export class Cell {
     }
 
     nextGeneration(numberOfNeighbours: number): Cell {
-        return new Cell(this.position, this.cellState.nextState(numberOfNeighbours));
+        return new Cell(
+            this.position,
+            this.cellState.nextState(numberOfNeighbours),
+        );
     }
 
     equals(cell: Cell): boolean {
