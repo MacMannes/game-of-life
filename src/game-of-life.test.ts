@@ -1,8 +1,8 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { GameOfLife } from './game-of-life';
 import { Bounds } from './bounds';
-import { Grid } from './grid';
 import { Cell } from './cell';
+import { GameOfLife } from './game-of-life';
+import { Grid } from './grid';
 import { UserInterface } from './user-interface';
 
 describe('Game Of Life', () => {
@@ -26,7 +26,7 @@ describe('Game Of Life', () => {
  ■  
   ■ 
 `);
-        expect(ui.displayWorld).toHaveBeenNthCalledWith(0, expected);
+        expect(ui.displayWorld).toHaveBeenNthCalledWith(1, expected);
     });
 
     it('should display the evolved grid after a tick ', () => {
