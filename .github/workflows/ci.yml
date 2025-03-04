@@ -28,6 +28,11 @@ jobs:
       - name: Run Unit Tests
         run: pnpm test:coverage
 
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@v4
+        env:
+          SONAR_TOKEN: ${{ secrets. SONARCLOUD_TOKEN }}
+
       - name: Publish Results Badge
         uses: wjervis7/vitest-badge-action@v1.0.0
         if: success() || failure()
