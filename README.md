@@ -1,6 +1,7 @@
 # Game Of Life
     
 ![Coverage](badge.svg)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=MacMannes_game-of-life&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=MacMannes_game-of-life)
 
 ## Description
 
