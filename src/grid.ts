@@ -1,6 +1,6 @@
+import { Bounds } from './bounds';
 import { Cell } from './cell';
 import { Position } from './position';
-import { Bounds } from './bounds';
 
 interface GridOptions {
     cells: Cell[];
@@ -40,11 +40,15 @@ export class Grid {
             const cell = this.getCell(position);
 
             representation += cell.toString();
-            if (position.column === this.bounds.getMaxColumn())
-                representation += '\n';
+
+            if (this.shouldAddNewLine(cell)) representation += '\n';
         }
 
         return representation;
+    }
+
+    shouldAddNewLine(cell: Cell) {
+        return cell.getPosition().column === this.bounds.getMaxColumn();
     }
 
     private computeNextCellState(position: Position) {
