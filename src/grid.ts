@@ -59,10 +59,10 @@ export class Grid {
     }
 
     private getCell(position: Position): Cell {
-        return (
-            this.cells.get(position.toString()) ??
-            Cell.deadCellAt(position.row, position.column)
-        );
+        const cell = this.cells.get(position.toString());
+        if (cell) return cell;
+
+        return Cell.deadCellAt(position.row, position.column);
     }
 
     private getAliveNeighbours(position: Position): Cell[] {
