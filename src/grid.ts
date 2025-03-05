@@ -47,7 +47,7 @@ export class Grid {
         return representation;
     }
 
-    shouldAddNewLine(cell: Cell) {
+    private shouldAddNewLine(cell: Cell) {
         return cell.getPosition().column === this.bounds.getMaxColumn();
     }
 
