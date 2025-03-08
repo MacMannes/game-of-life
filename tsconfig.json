@@ -11,7 +11,7 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": "src",
     "paths": {
-      "@utils/*": ["./utils/*"],
+      "@utils/*": ["./utils/*"]
     }
   },
   "exclude": ["node_modules"]
