@@ -3,6 +3,7 @@
     "lib": ["es2023"],
     "module": "nodenext",
     "target": "es2022",
+    "baseUrl": ".",
 
     /* Reasonable default base options: */
 
