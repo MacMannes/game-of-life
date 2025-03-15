@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
-import { Position } from './position';
-import { CellState } from './cell-state';
-import { Cell } from './cell';
+import { Position } from './position.ts';
+import { CellState } from './cell-state.ts';
+import { Cell } from './cell.ts';
 
 describe('Cell', () => {
     it('should keep the same row column for the next generation', () => {

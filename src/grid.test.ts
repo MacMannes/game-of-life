@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
-import { Cell } from './cell';
-import { Grid } from './grid';
-import { Bounds } from './bounds';
+import { Cell } from './cell.ts';
+import { Grid } from './grid.ts';
+import { Bounds } from './bounds.ts';
 
 describe('Grid', () => {
     it('should evolve correctly with a 2x2 grid using the Game of Life rule', () => {

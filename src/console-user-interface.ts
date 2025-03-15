@@ -1,6 +1,5 @@
 /* v8 ignore start */
-
-import { UserInterface } from './user-interface';
+import type { UserInterface } from './user-interface.ts';
 
 export class ConsoleUserInterface implements UserInterface {
     displayWorld(world: string): void {

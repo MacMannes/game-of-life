@@ -1,9 +1,9 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { Bounds } from './bounds';
-import { Cell } from './cell';
-import { GameOfLife } from './game-of-life';
-import { Grid } from './grid';
-import { UserInterface } from './user-interface';
+import { Bounds } from './bounds.ts';
+import { Cell } from './cell.ts';
+import { GameOfLife } from './game-of-life.ts';
+import { Grid } from './grid.ts';
+import type { UserInterface } from './user-interface.ts';
 
 describe('Game Of Life', () => {
     const ui: UserInterface = {

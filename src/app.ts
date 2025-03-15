@@ -1,10 +1,10 @@
 /* v8 ignore start */
 
-import { Bounds } from './bounds';
-import { Grid } from './grid';
-import { Cell } from './cell';
-import { GameOfLife } from './game-of-life';
-import { ConsoleUserInterface } from './console-user-interface';
+import { Bounds } from './bounds.ts';
+import { Grid } from './grid.ts';
+import { GameOfLife } from './game-of-life.ts';
+import { ConsoleUserInterface } from './console-user-interface.ts';
+import { Cell } from './cell.ts';
 
 function createInitialGrid(width: number, height: number): Grid {
     const bounds = Bounds.withSize({ width, height });
