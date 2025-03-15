@@ -4,38 +4,17 @@
     "module": "nodenext",
     "target": "es2022",
     "baseUrl": ".",
-
-    /* Reasonable default base options: */
-
-    // No emitting by default.
     "noEmit": true,
-
-    // Of course, this is common practice in Node but also part of ES standards.
     "resolveJsonModule": true,
-
-    // ESM-first please, yes.
     "esModuleInterop": true,
     "moduleDetection": "force",
-
-    // Of course, we don't want to check libraries. We shouldn't in any case.
     "skipLibCheck": true,
-
-    // Well yes of course, should be compatible, right?
     "allowJs": true,
-
     "isolatedModules": true,
-
-    // Well, yes, good idea.
     "verbatimModuleSyntax": true,
-
-    // Of course, we want strictness. Why is this not the default?
     "strict": true,
-
-    // What, is this no included in strictness?
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
-
-    // Allow "Deno"-style imports
     "allowImportingTsExtensions": true
   }
 }
