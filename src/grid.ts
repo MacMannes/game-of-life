@@ -1,6 +1,6 @@
-import { Bounds } from './bounds.ts';
-import { Cell } from './cell.ts';
-import { Position } from './position.ts';
+import { Bounds } from 'src/bounds.ts';
+import { Cell } from 'src/cell.ts';
+import { Position } from 'src/position.ts';
 
 interface GridOptions {
     cells: Cell[];

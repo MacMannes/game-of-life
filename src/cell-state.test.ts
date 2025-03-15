@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { CellState } from './cell-state.ts';
+import { CellState } from 'src/cell-state.ts';
 
 describe('CellState', () => {
     it('should create an alive cell', () => {

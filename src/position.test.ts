@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { Position } from './position.ts';
+import { Position } from 'src/position.ts';
 
 describe('Position', () => {
     it('should determine the correct neighbours', () => {

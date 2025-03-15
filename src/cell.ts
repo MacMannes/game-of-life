@@ -1,5 +1,5 @@
-import { Position } from './position.ts';
-import { CellState } from './cell-state.ts';
+import { Position } from 'src/position.ts';
+import { CellState } from 'src/cell-state.ts';
 
 export class Cell {
     constructor(

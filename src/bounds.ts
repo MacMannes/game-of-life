@@ -1,4 +1,4 @@
-import { Position } from './position.ts';
+import { Position } from 'src/position.ts';
 
 export class Bounds {
     constructor(
