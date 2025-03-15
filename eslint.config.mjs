@@ -19,7 +19,7 @@ export default tseslint.config(
             'prettier/prettier': 'error',
             'no-relative-import-paths/no-relative-import-paths': [
                 'error',
-                { allowSameFolder: false, prefix: '' },
+                { allowSameFolder: true, rootDir: 'src', prefix: '' },
             ],
         },
     },
