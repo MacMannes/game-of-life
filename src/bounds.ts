@@ -1,5 +1,10 @@
 import { Position } from 'src/position.ts';
 
+interface Dimensions {
+    width: number;
+    height: number;
+}
+
 export class Bounds {
     constructor(
         private readonly min: Position,
@@ -14,16 +19,10 @@ export class Bounds {
         }
     }
 
-    static withSize({
-        width,
-        height,
-    }: {
-        width: number;
-        height: number;
-    }): Bounds {
+    static withSize(dimensions: Dimensions): Bounds {
         return new Bounds(
             new Position(0, 0),
-            new Position(height - 1, width - 1),
+            new Position(dimensions.height - 1, dimensions.width - 1),
         );
     }
 
